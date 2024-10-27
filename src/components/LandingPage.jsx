@@ -16,16 +16,20 @@ const LandingPage = () => {
     window.speechSynthesis.speak(utterance);
   };
 
-  // Set up the speech effect
+  // Set up the speech effect for the "Learn More" button only
   useEffect(() => {
     // Check if speech has already been spoken
     if (!hasSpoken.current) {
-      speakText(
-        "Welcome to Swaroop's Portfolio. Click the button below to know more."
-      );
       hasSpoken.current = true; // Mark that speech has occurred
     }
   }, []);
+
+  // Handle button click
+  const handleLearnMoreClick = () => {
+    speakText(
+      "clicking this button will navigate you to skills and projects section.Thank you"
+    );
+  };
 
   return (
     <div id="home" className="landing-page">
@@ -33,10 +37,13 @@ const LandingPage = () => {
         <img src="/swaroop.jpeg" alt="Profile" className="profile-image" />
       </div>
       <header className="landing-header">
-        <h1 className="typing">
-          🌟 Welcome to Swaroop's Portfolio
-        </h1>
-        <HashLink smooth to="/#skills" className="cta-button">
+        <h1 className="typing">🌟 Welcome to Swaroop's Portfolio</h1>
+        <HashLink
+          smooth
+          to="/#skills"
+          className="cta-button"
+          onClick={handleLearnMoreClick}
+        >
           Learn More
         </HashLink>
       </header>
