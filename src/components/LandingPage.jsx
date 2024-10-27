@@ -34,8 +34,7 @@ const LandingPage = () => {
       </div>
       <header className="landing-header">
         <h1 className="typing">
-          🌟 Welcome to Swaroop's Portfolio. Click the button below to know
-          more.
+          🌟 Welcome to Swaroop's Portfolio
         </h1>
         <HashLink smooth to="/#skills" className="cta-button">
           Learn More
