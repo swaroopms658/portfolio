@@ -27,7 +27,7 @@ const LandingPage = () => {
   // Handle button click
   const handleLearnMoreClick = () => {
     speakText(
-      "clicking this button will navigate you to skills and projects section.Thank you"
+      "clicking this button will navigate you to skills and projects section Thank you"
     );
   };
 
