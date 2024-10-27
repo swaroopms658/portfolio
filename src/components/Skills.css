@@ -5,6 +5,16 @@
   text-align: center;
 }
 
+.skills-category {
+  margin-bottom: 30px;
+}
+
+.skills-category h3 {
+  font-size: 1.8em;
+  margin-bottom: 15px;
+  color: #333;
+}
+
 .skills-container {
   display: flex;
   flex-wrap: wrap;
@@ -13,7 +23,7 @@
 }
 
 .skill-card {
-  background-color: #f8f9fb;
+  background-color: #f7f7f7;
   border: 1px solid #ddd;
   border-radius: 8px;
   padding: 20px;
@@ -28,9 +38,9 @@
 }
 
 .skill-image {
-  width: 50px; /* Adjust size as needed */
+  width: 50px;
   height: 50px;
   margin-bottom: 10px;
   object-fit: contain;
-  border-radius: 8px;
+  border-radius: 10px;
 }
