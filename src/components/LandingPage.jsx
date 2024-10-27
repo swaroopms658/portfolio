@@ -4,10 +4,10 @@ import { HashLink } from "react-router-hash-link";
 import "./LandingPage.css";
 
 const LandingPage = () => {
-  
+  // Create a ref to store whether speech has been triggered
   const hasSpoken = useRef(false);
 
-  
+  // Function to trigger speech
   const speakText = (text) => {
     const utterance = new SpeechSynthesisUtterance(text);
     utterance.lang = "en-US";
@@ -16,7 +16,7 @@ const LandingPage = () => {
     window.speechSynthesis.speak(utterance);
   };
 
-  
+  // Set up the speech effect
   useEffect(() => {
     // Check if speech has already been spoken
     if (!hasSpoken.current) {
