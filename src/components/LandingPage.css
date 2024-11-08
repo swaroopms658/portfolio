@@ -1,0 +1,111 @@
+/* src/components/LandingPage.css */
+
+.landing-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: white;
+  color: white;
+}
+
+.profile-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.profile-image {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  border: 5px solid white;
+  object-fit: cover;
+}
+
+/* Typing effect with softer lighting effects */
+.typing {
+  font-size: 2em;
+  font-weight: bold;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid #ff6f61;
+  color: #ffffff;
+  animation: typing 3s steps(30, end), blink-caret 0.5s step-end infinite,
+    colorChange 5s linear infinite, subtleGlow 3s ease-in-out infinite alternate;
+}
+
+/* Typing keyframes */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* Blinking caret */
+@keyframes blink-caret {
+  50% {
+    border-color: transparent;
+  }
+}
+
+/* Color change animation for each word */
+@keyframes colorChange {
+  0% {
+    color: #0b0a0a;
+  }
+  25% {
+    color: #1b3c7d;
+  }
+  50% {
+    color: #080914;
+  }
+  75% {
+    color: #1d2c8d;
+  }
+  100% {
+    color: #040602;
+  }
+}
+
+.landing-header {
+  text-align: center;
+}
+
+.cta-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #ff6f61;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #ff3b2f;
+}
+.chatbot-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px; /* Position button on the right */
+  background-color: #08080c;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.chatbot-toggle i {
+  font-size: 24px; /* Adjust icon size */
+}

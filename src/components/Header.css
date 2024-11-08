@@ -1,0 +1,97 @@
+/* src/components/Header.css */
+
+.header {
+  padding: 20px;
+  background: #333;
+  color: white;
+  position: relative;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+/* Style for the logo image */
+.logo-image {
+  width: 50px; /* Adjust as needed */
+  height: 50px;
+  margin-right: 10px;
+  border-radius: 50%; /* Space between logo and name */
+}
+/* Style for the "S" */
+.logo-s {
+  font-size: 48px; /* Larger size for "S" */
+  color: #ff6f61; /* Different color for "S" */
+}
+
+.nav-menu {
+  display: flex;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 20px;
+  width: 25px;
+}
+
+.hamburger .line {
+  height: 3px;
+  background: white;
+  width: 100%;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none;
+  }
+
+  .nav-menu.open {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    z-index: 1;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-links a {
+    margin: 10px 0;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}

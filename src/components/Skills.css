@@ -1,0 +1,69 @@
+/* src/components/Skills.css */
+
+.skills-section {
+  padding: 50px;
+  text-align: center;
+}
+
+.skills-category {
+  margin-bottom: 30px;
+}
+
+.skills-category h3 {
+  font-size: 1.8em;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Skill card styling with fast horizontal movement */
+.skill-card {
+  background-color: #f7f7f7;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  width: 150px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.2s;
+  animation: moveHorizontal 1.5s linear infinite alternate; /* Fast horizontal movement */
+}
+
+/* Row-wise staggered effect */
+.skill-card:nth-child(2n) {
+  animation-delay: 0.2s;
+}
+
+.skill-card:nth-child(3n) {
+  animation-delay: 0.4s;
+}
+
+.skill-card:nth-child(4n) {
+  animation-delay: 0.6s;
+}
+
+/* Fast horizontal movement animation */
+@keyframes moveHorizontal {
+  0% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateX(
+      20px
+    ); /* Adjust for the desired horizontal distance */
+  }
+}
+
+.skill-image {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+  object-fit: contain;
+  border-radius: 10px;
+}
