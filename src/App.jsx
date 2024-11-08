@@ -17,24 +17,19 @@ function App() {
             path="/"
             element={
               <>
-                <LandingPage />
-                <Skills />
-                <Projects />
+                <div id="home">
+                  <LandingPage />
+                </div>
+                <div id="skills">
+                  <Skills />
+                </div>
+                <div id="projects">
+                  <Projects />
+                </div>
               </>
             }
           />
         </Routes>
-        {/* Sections with IDs for chatbot navigation */}
-        <div id="home">
-          <LandingPage />
-        </div>
-        <div id="skills">
-          <Skills />
-        </div>
-        <div id="projects">
-          <Projects />
-        </div>
-
         <Footer />
       </div>
     </Router>
