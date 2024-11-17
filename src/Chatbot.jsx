@@ -7,7 +7,7 @@ const Chatbot = ({ onClose }) => {
   const [messages, setMessages] = useState([
     {
       sender: "bot",
-      text: "Hi! Type 'home', 'skills', 'projects', or 'contact' to navigate.",
+      text: "Hi! Type 'home', 'skills', 'projects' to navigate.",
     },
   ]);
 
