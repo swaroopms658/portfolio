@@ -30,17 +30,6 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  position: relative;
-
-  /* Entrance Animation */
-  animation: fadeInSlideUp 0.8s ease-in-out;
-}
-
-/* Hover Animation */
-.mac-screen-card:hover {
-  transform: scale(1.05); /* Slight zoom */
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); /* Elevated shadow */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Mac Header */
@@ -88,21 +77,9 @@
 }
 
 .skill-image {
-  width: 50px;
+  width: 70px;
   height: 50px;
   margin-bottom: 10px;
   object-fit: contain;
   border-radius: 8px;
-}
-
-/* Entrance Animation: Fade-In + Slide-Up */
-@keyframes fadeInSlideUp {
-  0% {
-    opacity: 0;
-    transform: translateY(20px); /* Start below the initial position */
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0); /* End at the original position */
-  }
 }
