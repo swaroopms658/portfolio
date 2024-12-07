@@ -1,4 +1,3 @@
-// src/components/LandingPage.jsx
 import React, { useEffect, useRef, useState } from "react";
 import { HashLink } from "react-router-hash-link";
 import "./LandingPage.css";
@@ -29,19 +28,35 @@ const LandingPage = () => {
   // Handle button click
   const handleLearnMoreClick = () => {
     speakText(
-      "clicking this button will navigate you to skills and projects section.Thank you"
+      "Clicking this button will navigate you to skills and projects section. Thank you"
     );
   };
+
   const [showChatbot, setShowChatbot] = useState(false);
 
   const toggleChatbot = () => {
     setShowChatbot(!showChatbot);
   };
+
   return (
     <div id="home" className="landing-page">
+      <div className="solar-system">
+        <div className="sun"></div>
+        <div className="orbit orbit-1">
+          <div className="planet"></div>
+        </div>
+        <div className="orbit orbit-2">
+          <div className="planet"></div>
+        </div>
+        <div className="orbit orbit-3">
+          <div className="planet"></div>
+        </div>
+      </div>
+
       <div className="profile-container">
         <img src="/swaroop.jpeg" alt="Profile" className="profile-image" />
       </div>
+
       <header className="landing-header">
         <h1 className="typing">🌟 Welcome to Swaroop's Portfolio</h1>
 
@@ -51,6 +66,7 @@ const LandingPage = () => {
           className="cta-button"
           onClick={handleLearnMoreClick}
         ></HashLink>
+
         {/* Chatbot Toggle Button */}
         <button className="chatbot-toggle" onClick={toggleChatbot}>
           <i className="fas fa-comments"></i> 🤖
