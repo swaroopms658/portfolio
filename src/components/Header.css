@@ -1,12 +1,19 @@
 /* src/components/Header.css */
 
+/* Overall card container with dark background and terminal-style look */
 .header {
   padding: 20px;
-  background: #333;
-  color: white;
+  background: #1e1e1e; /* Dark background similar to terminal */
+  color: #d4d4d4; /* Light gray text for better contrast */
   position: relative;
+  border-radius: 8px; /* Rounded corners for a more modern look */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+  margin: 20px; /* Margin around the card */
+  font-family: "Courier New", Courier, monospace; /* Monospaced font for terminal feel */
+  border: 2px solid #333; /* Border with dark gray color */
 }
 
+/* Container for logo and navigation items */
 .nav-container {
   display: flex;
   justify-content: space-between;
@@ -18,19 +25,22 @@
   font-weight: bold;
   display: flex;
   align-items: center;
+  color: #ffcc00; /* Yellow color for the logo */
 }
 
 /* Style for the logo image */
 .logo-image {
-  width: 50px; /* Adjust as needed */
+  width: 50px; /* Adjust logo size */
   height: 50px;
   margin-right: 10px;
-  border-radius: 50%; /* Space between logo and name */
+  border-radius: 50%;
+  border: 2px solid #ffcc00; /* Yellow border to match the logo color */
 }
-/* Style for the "S" */
+
+/* Style for "S" */
 .logo-s {
-  font-size: 48px; /* Larger size for "S" */
-  color: #ff6f61; /* Different color for "S" */
+  font-size: 48px; /* Larger size for emphasis */
+  color: #ffcc00; /* Yellow color to highlight */
 }
 
 .nav-menu {
@@ -44,10 +54,17 @@
 }
 
 .nav-links a {
-  color: white;
+  color: #d4d4d4; /* Light gray text for navigation links */
   text-decoration: none;
+  font-size: 16px; /* Smaller size for readability */
+  transition: color 0.3s ease;
 }
 
+.nav-links a:hover {
+  color: #ffcc00; /* Yellow on hover to simulate a bash terminal effect */
+}
+
+/* Hamburger menu for mobile */
 .hamburger {
   display: none;
   cursor: pointer;
@@ -59,7 +76,7 @@
 
 .hamburger .line {
   height: 3px;
-  background: white;
+  background: #d4d4d4; /* Light lines for hamburger menu */
   width: 100%;
 }
 
@@ -77,8 +94,10 @@
     top: 60px;
     left: 0;
     width: 100%;
-    background-color: #333;
+    background-color: #1e1e1e; /* Dark background for mobile */
     z-index: 1;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   }
 
   .nav-links {
@@ -89,6 +108,7 @@
 
   .nav-links a {
     margin: 10px 0;
+    font-size: 18px;
   }
 
   .hamburger {

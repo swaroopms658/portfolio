@@ -50,9 +50,7 @@ const LandingPage = () => {
           to="/#skills"
           className="cta-button"
           onClick={handleLearnMoreClick}
-        >
-          Learn More
-        </HashLink>
+        ></HashLink>
         {/* Chatbot Toggle Button */}
         <button className="chatbot-toggle" onClick={toggleChatbot}>
           <i className="fas fa-comments"></i> 🤖

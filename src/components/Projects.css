@@ -1,6 +1,7 @@
 .projects-section {
   padding: 50px;
   text-align: center;
+  background-color: #f7f7f7; /* Light gray for a clean background */
 }
 
 .projects-container {
@@ -10,94 +11,101 @@
   justify-content: center;
 }
 
-/* Code Editor Card */
-.code-editor-card {
-  background-color: #1e1e1e;
-  color: #d4d4d4;
-  border-radius: 8px;
-  width: 300px; /* Fixed width for uniformity */
-  height: 250px; /* Fixed height for uniformity */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+/* Ubuntu Card */
+.ubuntu-card {
+  background-color: #efecee; /* Aubergine base color */
+  color: #ffffff;
+  border-radius: 12px; /* Softer rounded edges */
+  width: 300px;
+  height: 250px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Subtle shadow */
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Distribute header, content, and footer */
+  justify-content: space-between;
   overflow: hidden;
-  transition: transform 0.2s;
+  transition: transform 0.2s, box-shadow 0.3s;
 }
 
-.code-editor-card:hover {
-  transform: scale(1.05);
+.ubuntu-card:hover {
+  transform: scale(1.05); /* Slight zoom effect */
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
 }
 
-/* Editor Header */
-.code-editor-header {
-  background-color: #2d2d2d;
-  padding: 8px 12px;
+/* Card Header */
+.ubuntu-card-header {
+  background-color: #0a0709; /* Darker aubergine for contrast */
+  padding: 10px 16px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
 }
 
-.dots {
+.ubuntu-dots {
   display: flex;
   gap: 6px;
 }
 
-.dot {
+.ubuntu-dot {
   width: 10px;
   height: 10px;
   border-radius: 50%;
 }
 
-.dot.red {
-  background-color: #ff5f57;
+.ubuntu-dot.red {
+  background-color: #e95420; /* Ubuntu's orange */
 }
 
-.dot.yellow {
-  background-color: #ffbd2e;
+.ubuntu-dot.yellow {
+  background-color: #f9c846; /* Warm yellow */
 }
 
-.dot.green {
-  background-color: #28c840;
+.ubuntu-dot.green {
+  background-color: #5fa032; /* Subtle green */
 }
 
-.editor-title {
-  font-size: 14px;
-  color: #d4d4d4;
+.ubuntu-title {
+  font-size: 16px;
   font-weight: bold;
+  color: #ffffff;
+  text-align: center;
 }
 
-/* Editor Content */
-.code-editor-content {
-  background-color: #1e1e1e;
+/* Card Content */
+.ubuntu-card-content {
+  background-color: #8c3877;
   padding: 16px;
-  font-family: "Source Code Pro", monospace;
+  font-family: "Ubuntu Mono", monospace; /* Ubuntu-specific font */
   font-size: 14px;
   overflow: auto;
   white-space: pre-wrap;
-  flex: 1; /* Ensures the content area takes available space */
+  flex: 1; /* Ensures the content area takes up available space */
+  color: #e8d5e1; /* Light text for readability */
 }
 
-/* Editor Footer */
-.code-editor-footer {
-  background-color: #2d2d2d;
+/* Card Footer */
+.ubuntu-card-footer {
+  background-color: white;
   text-align: center;
   padding: 10px;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
 }
 
-.code-editor-footer a {
-  color: #4fc1ff;
+.ubuntu-card-footer a {
+  color: #e95420; /* Ubuntu's orange for links */
   text-decoration: none;
   font-size: 14px;
 }
 
-.code-editor-footer a:hover {
+.ubuntu-card-footer a:hover {
   text-decoration: underline;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .code-editor-card {
+  .ubuntu-card {
     width: 100%; /* Cards take full width on smaller screens */
   }
 }

@@ -1,19 +1,18 @@
 import React from "react";
 import "./Projects.css";
-import Skills from "./Skills";
 
 const Projects = () => {
   const projects = [
     {
       title: "Color Quantization Compressor",
       description:
-        " Implemented an image compression application using an unsupervised machine learning algorithm. The application compressesimages by reducing the color palette to a specified number of colors. In this project, the original image was compressed using 16 colors",
+        "Implemented an image compression application using an unsupervised machine learning algorithm. The application compresses images by reducing the color palette to a specified number of colors. In this project, the original image was compressed using 16 colors.",
       githubUrl: "https://github.com/swaroopms658?tab=repositories",
     },
     {
       title: "ML Web App",
       description:
-        "Developed an ML-powered web application for predicting diabetes and classifying customers",
+        "Developed an ML-powered web application for predicting diabetes and classifying customers.",
       githubUrl: "https://github.com/swaroopms658?tab=repositories",
     },
     {
@@ -23,7 +22,7 @@ const Projects = () => {
       githubUrl: "https://github.com/swaroopms658?tab=repositories",
     },
     {
-      title: "Personal Porfolio",
+      title: "Personal Portfolio",
       description:
         "Developed a full-featured portfolio with voice and chatbot capabilities.",
       githubUrl: "https://github.com/swaroopms658?tab=repositories",
@@ -35,15 +34,27 @@ const Projects = () => {
       <h2>Projects</h2>
       <div className="projects-container">
         {projects.map((project, index) => (
-          <div key={index} className="code-editor-card">
-            <h3>{project.title}</h3>
-            <p>{project.description}</p>
-            <button
-              className="github-button"
-              onClick={() => window.open(project.githubUrl, "_blank")}
-            >
-              View on GitHub
-            </button>
+          <div key={index} className="ubuntu-card">
+            <div className="ubuntu-card-header">
+              <div className="ubuntu-dots">
+                <span className="ubuntu-dot red"></span>
+                <span className="ubuntu-dot yellow"></span>
+                <span className="ubuntu-dot green"></span>
+              </div>
+              <div className="ubuntu-title">{project.title}</div>
+            </div>
+            <div className="ubuntu-card-content">
+              <p>{project.description}</p>
+            </div>
+            <div className="ubuntu-card-footer">
+              <a
+                href={project.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View on GitHub
+              </a>
+            </div>
           </div>
         ))}
       </div>
