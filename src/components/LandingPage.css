@@ -218,8 +218,8 @@
 
   /* Solar system adjustments */
   .solar-system {
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    height: 400px;
     top: 120px;
     right: 10px;
   }
@@ -239,7 +239,7 @@
 
   /* Position the solar system and profile for smaller screens */
   .profile-container {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
   }
 
   /* Adjust spacing and layout for mobile */
