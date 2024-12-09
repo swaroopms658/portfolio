@@ -58,7 +58,9 @@ const LandingPage = () => {
       </div>
 
       <header className="landing-header">
-        <h1 className="typing">🌟 Welcome to Swaroop's Portfolio</h1>
+        <h1 className="typing">
+          🌟 Welcome to Swaroop's Portfolio,Im a full stack python developer{" "}
+        </h1>
 
         <HashLink
           smooth
