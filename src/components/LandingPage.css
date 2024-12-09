@@ -7,7 +7,7 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background: rgb(29, 29, 73);
+  background: linear-gradient(to bottom, #001d3d, #000);
   color: white;
   padding: 20px;
   box-sizing: border-box;
@@ -20,11 +20,15 @@
 }
 
 .profile-image {
-  width: 250px;
+  width: 250px; /* Adjust size as needed */
   height: 250px;
-  border-radius: 50%;
-  border: 5px solid white;
+  border-radius: 50%; /* Makes it circular */
+  border: 5px solid white; /* Adds a white border */
   object-fit: cover;
+  object-position: top; /* Ensures the image scales properly without distortion */
+}
+.profile-image:hover {
+  transform: scale(1.2); /* Scales the image to 120% when hovered */
 }
 
 .typing {

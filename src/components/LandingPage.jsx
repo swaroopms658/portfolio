@@ -54,13 +54,11 @@ const LandingPage = () => {
       </div>
 
       <div className="profile-container">
-        <img src="/swaroop.jpeg" alt="Profile" className="profile-image" />
+        <img src="/swaroop .jpeg" alt="Hi" className="profile-image" />
       </div>
 
       <header className="landing-header">
-        <h1 className="typing">
-          🌟 Welcome to Swaroop's Portfolio,Im a full stack python developer{" "}
-        </h1>
+        <h1 className="typing">🌟 Welcome to Swaroop's Portfolio 🌟</h1>
 
         <HashLink
           smooth
