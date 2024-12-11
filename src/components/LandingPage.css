@@ -17,18 +17,22 @@
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
+  flex-wrap: wrap; /* Ensures content wraps on small screens */
+  gap: 10px; /* Adds spacing between elements */
 }
 
 .profile-image {
-  width: 250px; /* Adjust size as needed */
+  width: 250px;
   height: 250px;
-  border-radius: 50%; /* Makes it circular */
-  border: 5px solid rgb(50, 52, 42); /* Adds a white border */
+  border-radius: 50%;
+  border: 5px solid rgb(50, 52, 42);
   object-fit: cover;
-  object-position: top; /* Ensures the image scales properly without distortion */
+  object-position: top;
+  transition: transform 0.3s ease;
 }
+
 .profile-image:hover {
-  transform: scale(1.2); /* Scales the image to 120% when hovered */
+  transform: scale(1.2);
 }
 
 .typing {
@@ -59,23 +63,13 @@
 }
 
 @keyframes colorChange {
-  0% {
-    color: white;
-  }
-  25% {
-    color: white;
-  }
-  50% {
-    color: white;
-  }
-  75% {
-    color: white;
-  }
+  0%,
   100% {
     color: white;
   }
 }
 
+/* Header Styling */
 .landing-header {
   text-align: center;
 }
@@ -83,38 +77,39 @@
 .cta-button {
   width: 50px;
   height: 50px;
-  background-color: #000000; /* Black background */
-  color: #ffffff; /* White arrow color */
+  background-color: #000000;
+  color: #ffffff;
   border: none;
-  border-radius: 50%; /* Make it circular */
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .cta-button:hover {
-  background-color: #444444; /* Slightly lighter background on hover */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+  background-color: #444444;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
 .cta-button:active {
-  background-color: #333333; /* Darker color on click */
-  box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.4); /* Inset shadow for pressed effect */
+  background-color: #333333;
+  box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.4);
 }
 
 .cta-button::before {
-  content: " ⬇"; /* Unicode arrow character */
+  content: "⬇"; /* Unicode arrow character */
   font-size: 18px;
   font-weight: bold;
 }
 
+/* Chatbot Button */
 .chatbot-toggle {
   position: fixed;
   bottom: 20px;
-  right: 20px; /* Position button on the right */
+  right: 20px;
   background-color: #08080c;
   color: white;
   border: none;
@@ -127,11 +122,7 @@
   z-index: 1000;
 }
 
-.chatbot-toggle i {
-  font-size: 24px; /* Adjust icon size */
-}
-
-/* Solar System Container */
+/* Solar System Animation */
 .solar-system {
   position: absolute;
   top: 200px;
@@ -152,17 +143,6 @@
   animation: rotateOrbit 10s linear infinite;
 }
 
-.planet {
-  width: 60px;
-  height: 60px;
-  background: radial-gradient(circle, #0a0d0e, #f7f8f9);
-  border-radius: 50%;
-  position: absolute;
-  top: -10px; /* Center the planet in the orbit */
-  left: 50%;
-  transform: translateX(-50%);
-}
-
 .orbit-1 {
   width: 120px;
   height: 180px;
@@ -177,8 +157,19 @@
 
 .orbit-3 {
   width: 240px;
-  height: 240;
+  height: 240px;
   animation-duration: 10s;
+}
+
+.planet {
+  width: 60px;
+  height: 60px;
+  background: radial-gradient(circle, #0a0d0e, #f7f8f9);
+  border-radius: 50%;
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 @keyframes rotateOrbit {
@@ -190,58 +181,7 @@
   }
 }
 
-/* Media Query for Mobile Devices */
-@media (max-width: 768px) {
-  /* Profile image adjustments for mobile */
-  .profile-image {
-    width: 150px;
-    height: 150px;
-  }
-
-  /* Typing effect font size */
-  .typing {
-    font-size: 1.5em;
-  }
-
-  /* Adjust CTA button size */
-  .cta-button {
-    width: 45px;
-    height: 45px;
-    font-size: 14px;
-  }
-
-  /* Solar system adjustments */
-  .solar-system {
-    width: 300px;
-    height: 400px;
-    top: 120px;
-    right: 10px;
-  }
-
-  /* Planets size adjustments */
-  .planet {
-    width: 15px;
-    height: 15px;
-  }
-
-  /* Chatbot button */
-  .chatbot-toggle {
-    width: 50px;
-    height: 50px;
-    font-size: 20px;
-  }
-
-  /* Position the solar system and profile for smaller screens */
-  .profile-container {
-    margin-bottom: 30px;
-  }
-
-  /* Adjust spacing and layout for mobile */
-  .landing-header h1 {
-    font-size: 1.5em;
-  }
-}
-/* Shooting Star Animation */
+/* Shooting Stars */
 @keyframes shooting-star {
   0% {
     transform: translate(-200px, -200px) scale(1);
@@ -261,62 +201,21 @@
   box-shadow: 0 0 10px white;
   border-radius: 50%;
   animation: shooting-star 2s linear infinite;
-  opacity: 0;
 }
 
-/* Multiple shooting stars with delay */
-.shooting-star:nth-child(1) {
-  top: 10%;
-  left: 20%;
-  animation-delay: 0s;
-}
-
-.shooting-star:nth-child(2) {
-  top: 30%;
-  left: 40%;
-  animation-delay: 1s;
-}
-
-.shooting-star:nth-child(3) {
-  top: 50%;
-  left: 60%;
-  animation-delay: 2s;
-}
-
-.shooting-star:nth-child(4) {
-  top: 70%;
-  left: 80%;
-  animation-delay: 3s;
-}
-
-.shooting-star:nth-child(5) {
-  top: 20%;
-  left: 70%;
-  animation-delay: 4s;
-}
-
-/* Profile Badges Section */
+/* Profile Badges */
 .coding-profiles {
   text-align: center;
   margin-top: 40px;
 }
 
-.coding-profiles h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-  color: white;
-}
-
-/* Profile Card Container */
 .profiles-cards {
   display: flex;
   justify-content: center;
   gap: 20px;
 }
 
-/* Profile Badge Styling */
 .profile-badge {
-  display: inline-block;
   width: 100px;
   height: 100px;
   border-radius: 10px;
@@ -329,7 +228,6 @@
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 
-/* Profile Image Styling */
 .profile-logo {
   width: 100%;
   height: 100%;
@@ -337,7 +235,37 @@
   border-radius: 50%;
 }
 
-/* Optional: Adding a border on hover */
-.profile-badge:hover .profile-logo {
-  border: 3px solid #ffcc00;
+/* Media Queries */
+@media (max-width: 768px) {
+  .profile-image {
+    width: 150px;
+    height: 150px;
+  }
+
+  .typing {
+    font-size: 1.5em;
+  }
+
+  .cta-button {
+    width: 45px;
+    height: 45px;
+    font-size: 14px;
+  }
+
+  .solar-system {
+    width: 240px;
+    height: 240px;
+    top: 100px;
+    right: 10px;
+  }
+
+  .profiles-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .profile-badge {
+    width: 80px;
+    height: 80px;
+  }
 }
