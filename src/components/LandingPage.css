@@ -7,7 +7,7 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background: linear-gradient(to bottom, #0e0e0f, #0a41b8);
+  background: linear-gradient(to bottom, #2e6f74, #070708);
   color: white;
   padding: 20px;
   box-sizing: border-box;
@@ -20,10 +20,10 @@
 }
 
 .profile-image {
-  width: 350px; /* Adjust size as needed */
-  height: 350px;
+  width: 250px; /* Adjust size as needed */
+  height: 250px;
   border-radius: 50%; /* Makes it circular */
-  border: 5px solid white; /* Adds a white border */
+  border: 5px solid rgb(50, 52, 42); /* Adds a white border */
   object-fit: cover;
   object-position: top; /* Ensures the image scales properly without distortion */
 }
@@ -36,8 +36,8 @@
   font-weight: bold;
   overflow: hidden;
   white-space: nowrap;
-  border-right: 3px solid #ff6f61;
-  color: #ffffff;
+  border-right: 3px solid #36595b;
+  color: #140f0f;
   animation: typing 3s steps(30, end), blink-caret 0.5s step-end infinite,
     colorChange 5s linear infinite, subtleGlow 3s ease-in-out infinite alternate;
 }
@@ -303,4 +303,51 @@
   top: 20%;
   left: 70%;
   animation-delay: 4s;
+}
+
+/* Profile Badges Section */
+.coding-profiles {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.coding-profiles h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: white;
+}
+
+/* Profile Card Container */
+.profiles-cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Profile Badge Styling */
+.profile-badge {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(115, 117, 4, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-badge:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Profile Image Styling */
+.profile-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* Optional: Adding a border on hover */
+.profile-badge:hover .profile-logo {
+  border: 3px solid #ffcc00;
 }

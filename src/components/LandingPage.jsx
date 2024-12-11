@@ -81,6 +81,44 @@ const LandingPage = () => {
 
         {/* Chatbot Display */}
         {showChatbot && <Chatbot onClose={toggleChatbot} />}
+
+        {/* Coding Profile Logos Section */}
+        <div className="coding-profiles">
+          <h2 className="typing">Coding Profiles</h2>
+          <div className="profiles-cards">
+            {/* LeetCode Profile */}
+            <div className="profile-badge">
+              <a
+                href="https://leetcode.com/u/Swaroop25/"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="LeetCode Profile"
+              >
+                <img
+                  src="/images/lc.png"
+                  alt="LeetCode"
+                  className="profile-logo"
+                />
+              </a>
+            </div>
+
+            {/* HackerRank Profile */}
+            <div className="profile-badge">
+              <a
+                href="https://www.hackerrank.com/profile/swaroopms658"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="HackerRank Profile"
+              >
+                <img
+                  src="/images/hr.png"
+                  alt="HackerRank"
+                  className="profile-logo"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
       </header>
     </div>
   );
