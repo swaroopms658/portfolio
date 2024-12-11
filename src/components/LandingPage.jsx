@@ -63,9 +63,7 @@ const LandingPage = () => {
       </div>
 
       <header className="landing-header">
-        <h1 className="typing">
-          🌟 Welcome to Swaroop's Portfolio, I'm a SDE 🌟
-        </h1>
+        <h1 className="typing">Welcome to Swaroop's Portfolio, I'm a SDE</h1>
 
         <HashLink
           smooth
@@ -84,7 +82,7 @@ const LandingPage = () => {
 
         {/* Coding Profile Logos Section */}
         <div className="coding-profiles">
-          <h2 className="typing">Coding Profiles</h2>
+          <h2 className="typing">👨🏻‍💻Coding Profiles👨🏻‍💻</h2>
           <div className="profiles-cards">
             {/* LeetCode Profile */}
             <div className="profile-badge">
