@@ -19,9 +19,8 @@ const LandingPage = () => {
 
   // Set up the speech effect for the "Learn More" button only
   useEffect(() => {
-    // Check if speech has already been spoken
     if (!hasSpoken.current) {
-      hasSpoken.current = true; // Mark that speech has occurred
+      hasSpoken.current = true;
     }
   }, []);
 
@@ -43,16 +42,15 @@ const LandingPage = () => {
       <div className="solar-system">
         <div className="sun"></div>
         <div className="orbit orbit-1">
-          <div className="planet"></div>
+          <img src="/images/py.png" alt="Planet 1" className="planet" />
         </div>
         <div className="orbit orbit-2">
-          <div className="planet"></div>
+          <img src="/images/js.png" alt="Planet 2" className="planet" />
         </div>
         <div className="orbit orbit-3">
-          <div className="planet"></div>
+          <img src="/images/sql.png" alt="Planet 3" className="planet" />
         </div>
       </div>
-      {/* Shooting Star Animation */}
       <div className="shooting-stars">
         <div className="shooting-star"></div>
         <div className="shooting-star"></div>
@@ -66,7 +64,7 @@ const LandingPage = () => {
 
       <header className="landing-header">
         <h1 className="typing">
-          🌟 Welcome to Swaroop's Portfolio,Im a SDE 🌟
+          🌟 Welcome to Swaroop's Portfolio, I'm a SDE 🌟
         </h1>
 
         <HashLink
