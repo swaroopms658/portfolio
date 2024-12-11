@@ -7,7 +7,7 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background: linear-gradient(to bottom, #001d3d, #000);
+  background: linear-gradient(to bottom, #0e0e0f, #0a41b8);
   color: white;
   padding: 20px;
   box-sizing: border-box;
@@ -20,8 +20,8 @@
 }
 
 .profile-image {
-  width: 250px; /* Adjust size as needed */
-  height: 250px;
+  width: 350px; /* Adjust size as needed */
+  height: 350px;
   border-radius: 50%; /* Makes it circular */
   border: 5px solid white; /* Adds a white border */
   object-fit: cover;
@@ -250,4 +250,57 @@
   .landing-header h1 {
     font-size: 1.5em;
   }
+}
+/* Shooting Star Animation */
+@keyframes shooting-star {
+  0% {
+    transform: translate(-200px, -200px) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(100vw, 100vh) scale(0.2);
+    opacity: 0;
+  }
+}
+
+.shooting-star {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background-color: white;
+  box-shadow: 0 0 10px white;
+  border-radius: 50%;
+  animation: shooting-star 2s linear infinite;
+  opacity: 0;
+}
+
+/* Multiple shooting stars with delay */
+.shooting-star:nth-child(1) {
+  top: 10%;
+  left: 20%;
+  animation-delay: 0s;
+}
+
+.shooting-star:nth-child(2) {
+  top: 30%;
+  left: 40%;
+  animation-delay: 1s;
+}
+
+.shooting-star:nth-child(3) {
+  top: 50%;
+  left: 60%;
+  animation-delay: 2s;
+}
+
+.shooting-star:nth-child(4) {
+  top: 70%;
+  left: 80%;
+  animation-delay: 3s;
+}
+
+.shooting-star:nth-child(5) {
+  top: 20%;
+  left: 70%;
+  animation-delay: 4s;
 }
