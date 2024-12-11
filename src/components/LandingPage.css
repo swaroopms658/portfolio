@@ -7,7 +7,7 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background: linear-gradient(to bottom, #2e6f74, #070708);
+  background: linear-gradient(to top, #283e51, #0a2342);
   color: white;
   padding: 20px;
   box-sizing: border-box;
@@ -145,16 +145,6 @@
   z-index: 1;
 }
 
-.sun {
-  width: 30px;
-  height: 30px;
-  background: radial-gradient(circle, #ffdd33, #ff9933);
-  border-radius: 50%;
-  box-shadow: 0 0 50px rgba(255, 223, 51, 0.8);
-  position: relative;
-  z-index: 2;
-}
-
 .orbit {
   position: absolute;
   border: 1px dashed white;
@@ -165,7 +155,7 @@
 .planet {
   width: 60px;
   height: 60px;
-  background: radial-gradient(circle, #3fa7d6, #1d69a3);
+  background: radial-gradient(circle, #0a0d0e, #f7f8f9);
   border-radius: 50%;
   position: absolute;
   top: -10px; /* Center the planet in the orbit */

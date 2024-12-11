@@ -40,7 +40,6 @@ const LandingPage = () => {
   return (
     <div id="home" className="landing-page">
       <div className="solar-system">
-        <div className="sun"></div>
         <div className="orbit orbit-1">
           <img src="/images/py.png" alt="Planet 1" className="planet" />
         </div>
