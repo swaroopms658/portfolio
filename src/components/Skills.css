@@ -1,7 +1,7 @@
 /* General Section Styling */
 .skills-section {
   padding: 4rem 2rem;
-  background-color: #f9f9f9;
+  background: linear-gradient(to bottom right, #d6d7dc, #272b30);
   font-family: "Arial", sans-serif;
   text-align: center;
 }
@@ -9,7 +9,7 @@
 .skills-title {
   font-size: 2.5rem;
   font-weight: bold;
-  color: #333;
+  color: #080303;
   margin-bottom: 2rem;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -23,7 +23,7 @@
 .category-title {
   font-size: 1.8rem;
   font-weight: 600;
-  color: #555;
+  color: #0b0202;
   margin-bottom: 1.5rem;
   border-bottom: 2px solid #007acc;
   display: inline-block;

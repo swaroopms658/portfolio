@@ -1,7 +1,11 @@
 .projects-section {
   padding: 50px;
   text-align: center;
-  background-color: #f7f7f7; /* Light gray for a clean background */
+  background: linear-gradient(
+    to bottom right,
+    #d6d7dc,
+    #647892
+  ); /* Light gray for a clean background */
 }
 
 .projects-container {
