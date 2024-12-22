@@ -1,42 +1,86 @@
-/* Footer Styling for Unix Terminal Look */
+/* Footer Styling with Enhanced Unix Terminal Look */
 .footer {
-  background-color: #2e2e2e; /* Dark background to mimic Unix terminal */
-  color: #8aff80; /* Light green text for terminal feel */
+  background-color: #1a1a1a; /* Sleek dark background */
+  color: #8aff80; /* Neon green terminal-like text */
   padding: 20px;
   text-align: center;
-  font-family: "Courier New", Courier, monospace; /* Monospaced font */
-  font-size: 14px;
-  border-top: 2px solid #444; /* Border to separate footer from the rest */
+  font-family: "Courier New", Courier, monospace; /* Monospaced font for terminal feel */
+  font-size: 16px; /* Slightly larger font for better readability */
+  border-top: 2px solid #444; /* Subtle border for separation */
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5); /* Soft shadow for depth */
 }
 
 .footer a {
-  color: #8aff80; /* Light green links for consistency */
+  color: #8aff80; /* Consistent neon green links */
   text-decoration: none;
-  transition: color 0.3s ease;
+  font-weight: bold; /* Emphasize links */
+  border-bottom: 1px dotted #8aff80; /* Subtle underline for terminal aesthetic */
+  transition: color 0.3s ease, border-bottom-color 0.3s ease;
 }
 
 .footer a:hover {
-  color: #f1f1f1; /* Slightly lighter color for hover effect */
-  text-decoration: underline;
-}
-/* Footer Styling for Unix Terminal Look */
-.footer {
-  background-color: #2e2e2e; /* Dark background to mimic Unix terminal */
-  color: #f1f5f1; /* Light green text for terminal feel */
-  padding: 20px;
-  text-align: center;
-  font-family: "Courier New", Courier, monospace; /* Monospaced font */
-  font-size: 14px;
-  border-top: 2px solid #444; /* Border to separate footer from the rest */
+  color: #00ffcc; /* Brighter hover effect for contrast */
+  border-bottom-color: #00ffcc; /* Match underline color on hover */
 }
 
-.footer a {
-  color: #8aff80; /* Light green links for consistency */
-  text-decoration: none;
-  transition: color 0.3s ease;
+.footer p {
+  margin: 10px 0;
 }
 
-.footer a:hover {
-  color: #f1f1f1; /* Slightly lighter color for hover effect */
-  text-decoration: underline;
+.footer-icons {
+  margin-top: 10px;
+}
+
+.footer-icons a {
+  display: inline-block;
+  margin: 0 10px;
+  font-size: 20px; /* Icon size */
+  color: #8aff80; /* Neon green for icons */
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.footer-icons a:hover {
+  color: #00ffcc; /* Brighter hover color */
+  transform: scale(1.2); /* Slight scaling effect for interaction */
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .footer {
+    font-size: 14px; /* Adjust font size for smaller screens */
+    padding: 15px;
+  }
+
+  .footer-icons a {
+    font-size: 18px; /* Slightly smaller icons on mobile */
+    margin: 0 5px; /* Reduce spacing between icons */
+  }
+
+  .footer a {
+    font-size: 14px; /* Slightly smaller links for mobile */
+  }
+
+  .footer p {
+    font-size: 14px; /* Adjust paragraph text size */
+  }
+
+  .footer-icons {
+    display: flex;
+    justify-content: center; /* Center icons horizontally */
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 10px;
+  }
+
+  .footer a {
+    font-size: 12px; /* Further reduce font size on very small screens */
+  }
+
+  .footer-icons a {
+    font-size: 16px; /* Further reduce icon size */
+  }
 }

@@ -1,18 +1,96 @@
 /* src/index.css */
 
+/* Universal Reset with Modern Fonts */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
+  font-family: "Roboto", "Arial", sans-serif;
+  scroll-behavior: smooth;
 }
 
+/* Body Styling */
 body {
-  line-height: 1.6;
-  background-color: #f4f4f4;
+  line-height: 1.8;
+  font-size: 16px;
+  background: linear-gradient(to bottom, #e8f0ff, #f4f4f4);
+  color: #333;
+  padding: 20px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
+/* Headings */
 h2 {
-  color: #333;
-  margin-bottom: 20px;
+  font-size: 2rem;
+  color: #222;
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-bottom: 3px solid #646cff;
+  display: inline-block;
+  padding-bottom: 0.5rem;
+  margin: 20px auto;
+}
+
+/* Add Hover Effect for Links */
+a {
+  color: #646cff;
+  text-decoration: none;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+a:hover {
+  color: #222;
+  text-shadow: 0 0 5px #646cff, 0 0 10px #61dafb;
+}
+
+/* Add Smooth Transitions */
+button,
+input,
+a,
+h2 {
+  transition: all 0.3s ease;
+}
+
+/* Container Styling */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+  background: #0f0a0a;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  .container {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h2 {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+  }
+
+  .container {
+    box-shadow: none;
+    border-radius: 8px;
+    padding: 0.5rem;
+  }
 }

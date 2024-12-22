@@ -17,20 +17,29 @@
   padding: 20px;
   width: 90%;
   max-width: 400px;
+  max-height: 90vh; /* Prevent modal from exceeding viewport height */
+  display: flex;
+  flex-direction: column;
 }
 
 .chatbot-messages {
-  max-height: 300px;
+  max-height: 60vh; /* Adjust height for better mobile compatibility */
   overflow-y: auto;
   margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
 }
 
 .chatbot-bot-message {
   background-color: #0d0b0b;
+  color: white;
   padding: 10px;
   border-radius: 5px;
   margin-bottom: 5px;
   text-align: left;
+  font-size: 14px; /* Adjust font size for smaller screens */
 }
 
 .chatbot-user-message {
@@ -40,6 +49,15 @@
   border-radius: 5px;
   margin-bottom: 5px;
   text-align: right;
+  font-size: 14px; /* Adjust font size for smaller screens */
+}
+
+.chatbot-input {
+  display: flex;
+  flex-direction: row;
+  gap: 5px; /* Add spacing between input and button */
+  width: 100%;
+  margin-top: auto;
 }
 
 .chatbot-input input {
@@ -47,7 +65,6 @@
   padding: 10px;
   border-radius: 5px;
   border: 1px solid #ccc;
-  margin-right: 5px;
   font-size: 14px;
 }
 
@@ -63,15 +80,21 @@
   border: none;
   cursor: pointer;
 
-  /* Rocket shape using border-radius and pseudo-elements */
   width: 50px;
-  height: 70px;
+  height: 50px; /* Adjust height to be more proportional on mobile */
   position: relative;
-  border-radius: 50% 50% 0 0; /* Round the top edges for rocket nose */
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 14px;
+
+  /* Add transition for better UX */
+  transition: transform 0.2s ease;
+}
+
+.chatbot-input button:hover {
+  transform: scale(1.1);
 }
 
 /* Add fins to the rocket */
@@ -79,19 +102,19 @@
 .chatbot-input button::after {
   content: "";
   position: absolute;
-  width: 20px;
-  height: 20px;
+  width: 15px;
+  height: 15px;
   background-color: #007bff;
   transform: rotate(45deg);
-  bottom: 0;
+  bottom: -10px; /* Adjust positioning for smaller button */
 }
 
 .chatbot-input button::before {
-  left: -10px; /* Position left fin */
+  left: -8px; /* Position left fin */
 }
 
 .chatbot-input button::after {
-  right: -10px; /* Position right fin */
+  right: -8px; /* Position right fin */
 }
 
 /* Add flame animation */
@@ -109,5 +132,37 @@
   100% {
     transform: scale(1.2) rotate(45deg);
     opacity: 0.5;
+  }
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+  .chatbot-modal {
+    padding: 15px;
+    width: 95%;
+  }
+
+  .chatbot-messages {
+    max-height: 50vh; /* Further reduce height for smaller screens */
+    font-size: 14px;
+  }
+
+  .chatbot-bot-message,
+  .chatbot-user-message {
+    font-size: 12px;
+    padding: 8px; /* Adjust padding for smaller screens */
+  }
+
+  .chatbot-input button {
+    width: 45px;
+    height: 45px;
+    font-size: 12px; /* Adjust font size */
+  }
+
+  .chatbot-input button::before,
+  .chatbot-input button::after {
+    width: 12px;
+    height: 12px; /* Adjust fin size */
+    bottom: -8px; /* Adjust positioning */
   }
 }
