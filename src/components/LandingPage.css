@@ -237,13 +237,17 @@
 
 /* Media Queries */
 @media (max-width: 768px) {
+  .landing-page {
+    padding: 15px; /* Adjust padding */
+  }
+
   .profile-image {
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 200px;
   }
 
   .typing {
-    font-size: 1.5em;
+    font-size: 1.6em;
   }
 
   .cta-button {
@@ -267,5 +271,39 @@
   .profile-badge {
     width: 80px;
     height: 80px;
+  }
+
+  .chatbot-toggle {
+    bottom: 10px; /* Position the chatbot button higher */
+    right: 10px; /* Adjust for mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-image {
+    width: 150px;
+    height: 150px;
+  }
+
+  .typing {
+    font-size: 1.3em; /* Further reduce font size on smaller screens */
+  }
+
+  .cta-button {
+    width: 40px;
+    height: 40px;
+    font-size: 12px;
+  }
+
+  .solar-system {
+    width: 200px;
+    height: 200px;
+    top: 80px;
+    right: 5px;
+  }
+
+  .profile-badge {
+    width: 70px;
+    height: 70px;
   }
 }
