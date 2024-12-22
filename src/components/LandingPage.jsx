@@ -23,6 +23,13 @@ const LandingPage = () => {
       hasSpoken.current = true;
     }
   }, []);
+  useEffect(() => {
+    // Trigger rocket launch animation
+    const rocket = document.querySelector(".rocket");
+    if (rocket) {
+      rocket.classList.add("launch");
+    }
+  }, []);
 
   // Handle button click
   const handleLearnMoreClick = () => {
@@ -39,6 +46,9 @@ const LandingPage = () => {
 
   return (
     <div id="home" className="landing-page">
+      <div className="rocket-container">
+        <img src="/images/rocket.png" alt="Rocket" className="rocket" />
+      </div>
       <div className="solar-system">
         <div className="orbit orbit-1">
           <img src="/images/py.png" alt="Planet 1" className="planet" />

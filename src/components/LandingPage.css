@@ -12,6 +12,25 @@
   padding: 20px;
   box-sizing: border-box;
 }
+.rocket-container {
+  position: absolute;
+  bottom: 20px;
+  z-index: 10;
+}
+
+.rocket {
+  width: 100px;
+  animation: launch 5s forwards;
+}
+
+@keyframes launch {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100vh);
+  }
+}
 
 .profile-container {
   display: flex;
