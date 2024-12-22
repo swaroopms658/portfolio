@@ -13,9 +13,10 @@
   box-sizing: border-box;
 }
 .rocket-container {
-  position: absolute;
-  bottom: 20px;
-  z-index: 10;
+  position: absolute; /* or fixed, depending on your needs */
+  left: 270px; /* Adjust the distance from the left edge */
+  bottom: 20px; /* Distance from the bottom edge */
+  z-index: 100;
 }
 
 .rocket {
