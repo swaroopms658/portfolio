@@ -29,7 +29,10 @@ const Skills = () => {
     },
     {
       category: "Trending Technologies",
-      items: [{ name: "Machine Learning", image: "/images/ML.png" }],
+      items: [
+        { name: "Machine Learning", image: "/images/ML.png" },
+        { name: "Hugging Face", image: "/images/huggingface.png" },
+      ],
     },
   ];
 
