@@ -4,6 +4,12 @@ import "./Projects.css";
 const Projects = () => {
   const projects = [
     {
+      title: "SentimentGPT",
+      description:
+        "Sentiment GPT is a sentiment analysis web application developed using the Django framework and integrated with the Hugging Face Transformers library. This application accurately assesses the sentiment (positive, negative, or neutral) of given text inputs, providing a reliable sentiment score.",
+      githubUrl: "https://github.com/swaroopms658?tab=repositories",
+    },
+    {
       title: "Color Quantization Compressor",
       description:
         "Implemented an image compression application using an unsupervised machine learning algorithm. The application compresses images by reducing the color palette to a specified number of colors. In this project, the original image was compressed using 16 colors.",
