@@ -67,9 +67,6 @@ const LandingPage = () => {
         <div className="shooting-star"></div>
         <div className="shooting-star"></div>
       </div>
-      <div className="profile-container">
-        <img src="/swaroop .jpeg" alt="Hi" className="profile-image" />
-      </div>
 
       <header className="landing-header">
         <h1 className="typing">Welcome to Swaroop's Portfolio, I'm a SDE</h1>
