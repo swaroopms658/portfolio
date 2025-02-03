@@ -37,7 +37,7 @@ const Header = () => {
             </li>
 
             <li>
-              <a href="/Swaroop_resume.pdf" download="">
+              <a href="/swaroop.pdf" download="">
                 Download Resume
               </a>
             </li>
