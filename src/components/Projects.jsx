@@ -4,6 +4,14 @@ import "./Projects.css";
 const Projects = () => {
   const projects = [
     {
+      title: "AIBOM",
+      description: `Designed and implemented a real-time AIBOM solution for automated Bill of Materials (BOM) generation.
+  Developed a robust backend with FastAPI and an interactive frontend using React.
+  Integrated PowerShell for security vulnerability scanning and model analysis to enhance system security.
+  Implemented a DFS algorithm to efficiently process ZIP archives for comprehensive BOM generation and analysis.`,
+      githubUrl: "https://github.com/swaroopms658?tab=repositories",
+    },
+    {
       title: "SentimentGPT",
       description:
         "Sentiment GPT is a sentiment analysis web application developed using the Django framework and integrated with the Hugging Face Transformers library. This application accurately assesses the sentiment (positive, negative, or neutral) of given text inputs, providing a reliable sentiment score.",

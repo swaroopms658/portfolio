@@ -25,7 +25,7 @@
   font-weight: 600;
   color: #0b0202;
   margin-bottom: 1.5rem;
-  border-bottom: 2px solid #007acc;
+  border-bottom: 2px solid #0d2230;
   display: inline-block;
   padding-bottom: 0.5rem;
 }
@@ -41,16 +41,17 @@
 /* Mac Card Styling */
 .mac-card {
   background: #ffffff;
-  border: 1px solid #e0e0e0;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 3px solid rgba(247, 223, 8, 0.8); /* Blue glowing border */
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(91, 95, 98, 0.6);
   transition: transform 0.3s, box-shadow 0.3s;
   overflow: hidden;
+  position: relative;
 }
 
 .mac-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 20px rgba(0, 122, 204, 1);
 }
 
 /* Mac Card Header (Traffic Light Dots) */
