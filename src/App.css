@@ -1,137 +1,187 @@
-/* General Root Styling */
-#root {
+/* Reset & base */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root,
+.App {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: "Courier New", Courier, monospace;
+  background: #121212; /* Dark background for terminal theme */
+  color: #8aff80; /* Terminal neon green */
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Root wrapper */
+#root,
+.App {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-  background: linear-gradient(to bottom, #f0f4f8, #2a56a4);
+  padding: 2rem 1.5rem;
+  box-sizing: border-box;
+  /* Optional subtle background gradient/glassmorphism behind cards */
+  background: linear-gradient(180deg, #0f1113 0%, #1c1f22 100%);
   border-radius: 12px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 0 30px #00ffcc33, 0 6px 24px rgba(0, 255, 204, 0.4);
+  min-height: 100vh;
 }
 
-/* Logo Styling */
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: transform 300ms, filter 300ms;
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #00ffcc;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0 0 1rem 0;
+  user-select: none;
+  text-shadow: 0 0 6px #00ffccaa;
+}
+
+/* Text paragraphs */
+p {
+  color: #b7f8e7;
+  line-height: 1.5;
+  user-select: text;
+  margin: 0 0 1.25rem 0;
+}
+
+/* Links */
+a {
+  color: #8aff80;
+  text-decoration: none;
+  transition: color 0.25s ease, text-shadow 0.25s ease;
   cursor: pointer;
+  user-select: text;
 }
-.logo:hover {
-  transform: scale(1.1);
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-/* Spinning Animation for React Logo */
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+a:hover,
+a:focus {
+  color: #00ffcc;
+  outline: none;
+  text-shadow: 0 0 12px #00ffcccc;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-/* Card Styling */
-.card {
-  padding: 2em;
-  margin: 1em auto;
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-  transition: transform 300ms, box-shadow 300ms;
-  max-width: 500px;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
-}
-
-/* Documentation Text Styling */
-.read-the-docs {
-  color: #555;
-  font-size: 1.2rem;
-  margin-top: 1rem;
-}
-
-/* Floating Chatbot Button */
-.chatbot-button {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: linear-gradient(135deg, #ff6f61, #ff8966);
-  color: white;
+/* Buttons */
+button,
+input[type="button"],
+input[type="submit"] {
+  font-family: inherit;
+  cursor: pointer;
+  color: #121212;
+  background: linear-gradient(90deg, #8aff80 0%, #00ffcc 100%);
   border: none;
-  border-radius: 50%;
-  width: 60px;
-  height: 60px;
-  font-size: 24px;
-  font-weight: bold;
-  cursor: pointer;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-  z-index: 1000;
+  border-radius: 999px;
+  padding: 0.6em 2em;
+  font-weight: 700;
+  font-size: 1rem;
+  box-shadow: 0 3px 12px rgba(0, 255, 204, 0.2);
+  transition: background 0.3s ease, transform 0.15s ease;
+  user-select: none;
+}
+button:hover,
+button:focus,
+input[type="button"]:hover,
+input[type="submit"]:hover {
+  background: linear-gradient(90deg, #00ffcc 0%, #8aff80 100%);
+  transform: scale(1.05);
+  outline: none;
+}
+
+/* Section headings */
+section {
+  margin-bottom: 4rem;
+  padding-top: 80px; /* Offset for fixed header */
+  scroll-margin-top: 80px;
+}
+
+/* Utility: Center Flex container */
+.flex-center {
   display: flex;
-  align-items: center;
   justify-content: center;
-  transition: transform 300ms, box-shadow 300ms;
+  align-items: center;
 }
 
-.chatbot-button:hover {
-  transform: scale(1.1);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
-}
-
-/* Responsive Design */
+/* Responsive typography */
 @media (max-width: 768px) {
-  #root {
-    padding: 1rem;
+  #root,
+  .App {
+    padding: 1.5rem 1rem;
   }
 
-  .logo {
-    height: 5em;
-    padding: 1em;
+  h1 {
+    font-size: 1.8rem;
   }
 
-  .card {
-    padding: 1.5em;
-    margin: 1em auto;
-  }
-
-  .chatbot-button {
-    width: 50px;
-    height: 50px;
-    font-size: 20px;
+  h2 {
+    font-size: 1.5rem;
   }
 }
 
 @media (max-width: 480px) {
-  #root {
+  #root,
+  .App {
     padding: 1rem;
-    border-radius: 8px;
   }
 
-  .logo {
-    height: 4em;
-    padding: 0.8em;
+  h1 {
+    font-size: 1.5rem;
   }
 
-  .card {
-    padding: 1em;
+  h2 {
+    font-size: 1.3rem;
   }
+}
 
-  .chatbot-button {
-    width: 45px;
-    height: 45px;
-    font-size: 18px;
-  }
+/* Scrollbar styling for modern browsers */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #111;
+}
+::-webkit-scrollbar-thumb {
+  background: #00ffcc88;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #00ffaa;
+}
+
+/* Accessibility: Focus outlines for anchors and buttons */
+a:focus,
+button:focus,
+input[type="button"]:focus,
+input[type="submit"]:focus {
+  outline: 3px solid #00ffccaa;
+  outline-offset: 2px;
+}
+
+/* Miscellaneous */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* Prevent text selection for UI decoration but allow for content */
+.user-select-none {
+  user-select: none !important;
+}
+
+/* Smooth transitions default */
+* {
+  transition: background 0.25s ease, color 0.25s ease;
 }

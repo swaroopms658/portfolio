@@ -1,148 +1,166 @@
-/* General Section Styling */
+/* Skills Section */
 .skills-section {
-  padding: 4rem 2rem;
-  background: linear-gradient(to bottom right, #d6d7dc, #272b30);
-  font-family: "Arial", sans-serif;
-  text-align: center;
+  background: linear-gradient(135deg, #181c1f 0%, #23282c 100%);
+  padding: 3rem 1.5rem;
+  color: #8aff80;
+  font-family: "Courier New", Courier, monospace;
+  min-height: 100vh;
+  box-sizing: border-box;
+  user-select: none;
 }
 
+/* Section Title */
 .skills-title {
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: #080303;
-  margin-bottom: 2rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  font-size: 2.6rem;
+  text-align: center;
+  margin-bottom: 2.8rem;
+  color: #00ffcc;
+  text-shadow: 0 0 8px #00ffccaa;
 }
 
-/* Category Styling */
-.skills-category {
-  margin-bottom: 3rem;
-}
-
-.category-title {
-  font-size: 1.8rem;
-  font-weight: 600;
-  color: #0b0202;
-  margin-bottom: 1.5rem;
-  border-bottom: 2px solid #0d2230;
-  display: inline-block;
-  padding-bottom: 0.5rem;
-}
-
-/* Skill Grid Styling */
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1.5rem;
+/* Container for categories */
+.skills-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem 2rem;
   justify-content: center;
 }
 
-/* Mac Card Styling */
+/* Each skill category */
+.skills-category {
+  flex: 1 1 320px;
+  max-width: 380px;
+  background: rgba(26, 26, 26, 0.92);
+  border-radius: 18px;
+  padding: 24px 20px 30px;
+  box-shadow: inset 0 0 8px #00ffcc33, 0 10px 24px rgba(0, 255, 204, 0.25);
+  display: flex;
+  flex-direction: column;
+  user-select: text;
+  transition: box-shadow 0.3s ease;
+}
+
+.skills-category:hover,
+.skills-category:focus-within {
+  box-shadow: 0 18px 30px rgba(0, 255, 204, 0.55), inset 0 0 12px #00ffcccc;
+  outline: none;
+}
+
+/* Category title */
+.category-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.6rem;
+  color: #00ffcc;
+  text-shadow: 0 0 6px #00ffccaa;
+  text-align: center;
+  user-select: none;
+}
+
+/* Grid container for skills */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
+  gap: 1.4rem 1.6rem;
+  justify-items: center;
+}
+
+/* Mac Card Design */
 .mac-card {
-  background: #ffffff;
-  border: 3px solid rgba(247, 223, 8, 0.8); /* Blue glowing border */
-  border-radius: 20px;
-  box-shadow: 0 0 10px rgba(91, 95, 98, 0.6);
-  transition: transform 0.3s, box-shadow 0.3s;
-  overflow: hidden;
-  position: relative;
+  background: rgba(31, 31, 31, 0.93);
+  border-radius: 16px;
+  box-shadow: inset 0 0 10px #00ffcc44, 0 6px 18px rgba(0, 255, 204, 0.2);
+  width: 128px;
+  user-select: none;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+  outline-offset: 3px;
 }
 
+.mac-card:focus,
 .mac-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 20px rgba(0, 122, 204, 1);
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 18px 35px rgba(0, 255, 204, 0.6), inset 0 0 15px #00ffcccc;
+  outline: none;
 }
 
-/* Mac Card Header (Traffic Light Dots) */
+/* Mac card header with dots */
 .mac-card-header {
-  background: #f4f4f4;
-  padding: 0.5rem 1rem;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  gap: 0.5rem;
+  padding: 7px 14px 7px 14px;
+  gap: 8px;
+  user-select: none;
 }
 
 .mac-dot {
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  display: inline-block;
+  box-shadow: 0 0 6px #00ffccaa;
 }
 
 .mac-dot.red {
   background: #ff5f56;
+  box-shadow: 0 0 8px #ff5f56cc;
 }
 
 .mac-dot.yellow {
   background: #ffbd2e;
+  box-shadow: 0 0 8px #ffbd2ecc;
 }
 
 .mac-dot.green {
   background: #27c93f;
+  box-shadow: 0 0 8px #27c93fcc;
 }
 
-/* Mac Card Content */
+/* Mac card content */
 .mac-card-content {
-  padding: 1.5rem;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px 10px 20px;
+  gap: 10px;
+  user-select: none;
 }
 
+/* Skill icon */
 .skill-icon {
-  width: 70px;
-  height: 70px;
-  margin-bottom: 1rem;
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 4px #00ffcccc);
+  user-select: none;
 }
 
+/* Skill name */
 .skill-name {
-  font-size: 1rem;
-  font-weight: 500;
-  color: #333;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #8aff80;
+  user-select: text;
+  text-align: center;
+  user-select: none;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .skills-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-  }
-
-  .skill-icon {
-    width: 60px;
-    height: 60px;
-  }
-
-  .mac-card-content {
-    padding: 1rem;
-  }
-}
-
+/* Responsive */
 @media (max-width: 480px) {
+  .skills-category {
+    max-width: 100%;
+  }
+
+  .mac-card {
+    width: 100%;
+    max-width: 160px;
+  }
+
   .skills-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .skills-section {
-    padding: 2rem 1rem;
-  }
-
-  .skills-title {
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .category-title {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-  }
-
-  .skill-icon {
-    width: 50px;
-    height: 50px;
-  }
-
-  .skill-name {
-    font-size: 0.9rem;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1.2rem 1.4rem;
   }
 }

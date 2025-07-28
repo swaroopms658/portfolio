@@ -5,10 +5,8 @@ import Chatbot from "../Chatbot";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
 const LandingPage = () => {
-  // Create a ref to store whether speech has been triggered
   const hasSpoken = useRef(false);
 
-  // Function to trigger speech
   const speakText = (text) => {
     const utterance = new SpeechSynthesisUtterance(text);
     utterance.lang = "en-US";
@@ -17,21 +15,19 @@ const LandingPage = () => {
     window.speechSynthesis.speak(utterance);
   };
 
-  // Set up the speech effect for the "Learn More" button only
   useEffect(() => {
     if (!hasSpoken.current) {
       hasSpoken.current = true;
     }
   }, []);
+
   useEffect(() => {
-    // Trigger rocket launch animation
     const rocket = document.querySelector(".rocket");
     if (rocket) {
       rocket.classList.add("launch");
     }
   }, []);
 
-  // Handle button click
   const handleLearnMoreClick = () => {
     speakText(
       "Clicking this button will navigate you to skills and projects section. Thank you"
@@ -46,21 +42,21 @@ const LandingPage = () => {
 
   return (
     <div id="home" className="landing-page">
-      <div className="rocket-container">
+      <div className="rocket-container" aria-label="Rocket animation">
         <img src="/images/rocket.png" alt="Rocket" className="rocket" />
       </div>
-      <div className="solar-system">
+      <div className="solar-system" aria-label="Skills planets orbiting">
         <div className="orbit orbit-1">
-          <img src="/images/py.png" alt="Planet 1" className="planet" />
+          <img src="/images/py.png" alt="Python" className="planet" />
         </div>
         <div className="orbit orbit-2">
-          <img src="/images/js.png" alt="Planet 2" className="planet" />
+          <img src="/images/js.png" alt="JavaScript" className="planet" />
         </div>
         <div className="orbit orbit-3">
-          <img src="/images/sql.png" alt="Planet 3" className="planet" />
+          <img src="/images/sql.png" alt="SQL" className="planet" />
         </div>
       </div>
-      <div className="shooting-stars">
+      <div className="shooting-stars" aria-hidden="true">
         <div className="shooting-star"></div>
         <div className="shooting-star"></div>
         <div className="shooting-star"></div>
@@ -76,18 +72,27 @@ const LandingPage = () => {
           to="/#skills"
           className="cta-button"
           onClick={handleLearnMoreClick}
-        ></HashLink>
+          aria-label="Learn more about skills and projects"
+        >
+          Learn More ▼
+        </HashLink>
 
         {/* Chatbot Toggle Button */}
-        <button className="chatbot-toggle" onClick={toggleChatbot}>
-          <i className="fas fa-comments"></i> 🤖
+        <button
+          className="chatbot-toggle"
+          onClick={toggleChatbot}
+          aria-pressed={showChatbot}
+          aria-label="Toggle Chatbot"
+          title="Toggle chatbot"
+        >
+          <i className="fas fa-comments" aria-hidden="true"></i> 🤖
         </button>
 
         {/* Chatbot Display */}
         {showChatbot && <Chatbot onClose={toggleChatbot} />}
 
         {/* Coding Profile Logos Section */}
-        <div className="coding-profiles">
+        <section className="coding-profiles" aria-label="Coding Profiles">
           <h2 className="typing">👨🏻‍💻Coding Profiles👨🏻‍💻</h2>
           <div className="profiles-cards">
             {/* LeetCode Profile */}
@@ -96,11 +101,12 @@ const LandingPage = () => {
                 href="https://leetcode.com/u/Swaroop25/"
                 target="_blank"
                 rel="noopener noreferrer"
-                title="LeetCode Profile"
+                title="Visit LeetCode Profile"
+                aria-label="LeetCode profile"
               >
                 <img
                   src="/images/lc.png"
-                  alt="LeetCode"
+                  alt="LeetCode Logo"
                   className="profile-logo"
                 />
               </a>
@@ -112,17 +118,18 @@ const LandingPage = () => {
                 href="https://www.hackerrank.com/profile/swaroopms658"
                 target="_blank"
                 rel="noopener noreferrer"
-                title="HackerRank Profile"
+                title="Visit HackerRank Profile"
+                aria-label="HackerRank profile"
               >
                 <img
                   src="/images/hr.png"
-                  alt="HackerRank"
+                  alt="HackerRank Logo"
                   className="profile-logo"
                 />
               </a>
             </div>
           </div>
-        </div>
+        </section>
       </header>
     </div>
   );

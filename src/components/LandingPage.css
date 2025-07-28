@@ -1,321 +1,277 @@
-/* src/components/LandingPage.css */
-
-/* Mobile First Styles - Default Styles */
+/* Base page and fonts */
 .landing-page {
+  min-height: 100vh;
+  background: linear-gradient(120deg, #181c1f 0%, #23282c 100%);
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  height: 100vh;
-  background: linear-gradient(to top, #7a90a3, #090b0e);
-  color: white;
-  padding: 20px;
-  box-sizing: border-box;
+  padding: 3rem 1rem;
+  font-family: "Courier New", Courier, monospace;
+  color: #8aff80;
+  overflow-x: hidden;
 }
+
+/* Rocket container + animation */
 .rocket-container {
-  position: absolute; /* or fixed, depending on your needs */
-  left: 270px; /* Adjust the distance from the left edge */
-  bottom: 20px; /* Distance from the bottom edge */
-  z-index: 100;
+  position: relative;
+  height: 150px;
+  margin-bottom: 2rem;
 }
 
 .rocket {
   width: 100px;
-  animation: launch 5s forwards;
+  filter: drop-shadow(0 0 5px #00ffcc);
+  transition: transform 2.5s ease-in-out;
+  transform-origin: bottom center;
 }
 
-@keyframes launch {
+.rocket.launch {
+  animation: rocket-launch 3s forwards;
+}
+
+@keyframes rocket-launch {
   0% {
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
   }
   100% {
-    transform: translateY(-100vh);
-  }
-}
-
-.profile-image {
-  width: 250px;
-  height: 250px;
-  border-radius: 50%;
-  border: 5px solid rgb(50, 52, 42);
-  object-fit: cover;
-  object-position: top;
-  transition: transform 0.3s ease;
-}
-
-.profile-image:hover {
-  transform: scale(1.2);
-}
-
-.typing {
-  font-size: 2em;
-  font-weight: bold;
-  overflow: hidden;
-  white-space: nowrap;
-  border-right: 3px solid #36595b;
-  color: #140f0f;
-  animation: typing 3s steps(30, end), blink-caret 0.5s step-end infinite,
-    colorChange 5s linear infinite, subtleGlow 3s ease-in-out infinite alternate;
-}
-
-/* Typing keyframes */
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-}
-
-@keyframes blink-caret {
-  50% {
-    border-color: transparent;
-  }
-}
-
-@keyframes colorChange {
-  0%,
-  100% {
-    color: white;
-  }
-}
-
-/* Header Styling */
-.landing-header {
-  text-align: center;
-}
-
-.cta-button {
-  width: 50px;
-  height: 50px;
-  background-color: #000000;
-  color: #ffffff;
-  border: none;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.cta-button:hover {
-  background-color: #444444;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-}
-
-.cta-button:active {
-  background-color: #333333;
-  box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.4);
-}
-
-.cta-button::before {
-  content: "⬇"; /* Unicode arrow character */
-  font-size: 18px;
-  font-weight: bold;
-}
-
-/* Chatbot Button */
-.chatbot-toggle {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: #08080c;
-  color: white;
-  border: none;
-  border-radius: 50%;
-  width: 60px;
-  height: 60px;
-  font-size: 24px;
-  cursor: pointer;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  z-index: 1000;
-}
-
-/* Solar System Animation */
-.solar-system {
-  position: absolute;
-  top: 200px;
-  right: 20px;
-  width: 300px;
-  height: 300px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1;
-}
-
-.orbit {
-  position: absolute;
-  border: 1px dashed white;
-  border-radius: 50%;
-  animation: rotateOrbit 10s linear infinite;
-}
-
-.orbit-1 {
-  width: 120px;
-  height: 180px;
-  animation-duration: 6s;
-}
-
-.orbit-2 {
-  width: 140px;
-  height: 200px;
-  animation-duration: 8s;
-}
-
-.orbit-3 {
-  width: 240px;
-  height: 240px;
-  animation-duration: 10s;
-}
-
-.planet {
-  width: 60px;
-  height: 60px;
-  background: radial-gradient(circle, #0a0d0e, #f7f8f9);
-  border-radius: 50%;
-  position: absolute;
-  top: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-@keyframes rotateOrbit {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-/* Shooting Stars */
-@keyframes shooting-star {
-  0% {
-    transform: translate(-200px, -200px) scale(1);
-    opacity: 1;
-  }
-  100% {
-    transform: translate(100vw, 100vh) scale(0.2);
+    transform: translateY(-400px) scale(0.6);
     opacity: 0;
   }
 }
 
-.shooting-star {
-  position: absolute;
-  width: 6px;
-  height: 6px;
-  background-color: white;
-  box-shadow: 0 0 10px white;
-  border-radius: 50%;
-  animation: shooting-star 2s linear infinite;
+/* Solar system orbits */
+.solar-system {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-bottom: 3rem;
 }
 
-/* Profile Badges */
-.coding-profiles {
+.orbit {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 1px solid #00ffcc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: orbit-rotate 15s linear infinite;
+  position: relative;
+}
+
+.orbit-1 {
+  animation-duration: 18s;
+}
+.orbit-2 {
+  animation-duration: 22s;
+  animation-direction: reverse;
+}
+.orbit-3 {
+  animation-duration: 26s;
+}
+
+.planet {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: contain;
+  box-shadow: 0 0 8px #8aff80;
+}
+
+/* Orbit rotation animation */
+@keyframes orbit-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Shooting stars (background decorative stars) */
+.shooting-stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.shooting-star {
+  position: absolute;
+  width: 2px;
+  height: 80px;
+  background: linear-gradient(45deg, #00ffcc, transparent);
+  opacity: 0.7;
+  animation: shooting-star 3s linear infinite;
+  border-radius: 999px;
+}
+
+.shooting-star:nth-child(1) {
+  top: 10%;
+  left: 25%;
+  animation-delay: 0s;
+}
+.shooting-star:nth-child(2) {
+  top: 40%;
+  left: 50%;
+  animation-delay: 1s;
+}
+.shooting-star:nth-child(3) {
+  top: 70%;
+  left: 75%;
+  animation-delay: 2s;
+}
+.shooting-star:nth-child(4) {
+  top: 20%;
+  left: 80%;
+  animation-delay: 1.5s;
+}
+.shooting-star:nth-child(5) {
+  top: 55%;
+  left: 10%;
+  animation-delay: 0.7s;
+}
+
+@keyframes shooting-star {
+  0% {
+    transform: translateX(0) translateY(0) rotate(45deg);
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateX(200px) translateY(200px) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+/* Header and text styling */
+.landing-header {
+  max-width: 900px;
+  width: 100%;
   text-align: center;
-  margin-top: 40px;
+  padding: 1rem 1.5rem;
+  border-radius: 15px;
+  background: rgba(26, 26, 26, 0.85);
+  box-shadow: 0 6px 20px rgba(0, 255, 204, 0.25);
+}
+
+/* Typing effect placeholder class (you may add typing animation yourself) */
+.typing {
+  font-family: "Fira Mono", monospace;
+}
+
+/* Typography */
+.landing-header h1 {
+  font-size: 2rem;
+  margin-bottom: 0.6rem;
+  color: #8aff80;
+}
+
+.landing-header h2 {
+  font-size: 1.5rem;
+  margin: 1.5rem 0 1rem 0;
+  color: #a2f0aa;
+}
+
+/* CTA Button */
+.cta-button {
+  display: inline-block;
+  background: linear-gradient(90deg, #8aff80 0%, #00ffcc 100%);
+  color: #181c1f;
+  padding: 12px 30px;
+  margin: 1rem auto 2rem auto;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-decoration: none;
+  box-shadow: 0 3px 12px rgba(0, 255, 204, 0.2);
+  transition: background 0.3s ease, transform 0.15s ease;
+  cursor: pointer;
+}
+
+.cta-button:hover,
+.cta-button:focus {
+  background: linear-gradient(90deg, #00ffcc 0%, #8aff80 100%);
+  color: #000;
+  transform: translateY(-2px) scale(1.03);
+  outline: none;
+}
+
+/* Chatbot toggle button */
+.chatbot-toggle {
+  background: transparent;
+  border: none;
+  color: #8aff80;
+  font-size: 1.8rem;
+  cursor: pointer;
+  margin: 0 0 1.5rem 0;
+  transition: color 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.chatbot-toggle:hover,
+.chatbot-toggle:focus {
+  color: #00ffcc;
+  outline: none;
+}
+
+/* Coding profiles section */
+.coding-profiles {
+  margin-top: 2rem;
 }
 
 .profiles-cards {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 2rem;
+  flex-wrap: wrap;
 }
 
 .profile-badge {
-  width: 100px;
-  height: 100px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(115, 117, 4, 0.2);
+  background: rgba(26, 26, 26, 0.9);
+  border-radius: 14px;
+  padding: 8px 16px;
+  box-shadow: 0 4px 20px rgba(0, 255, 204, 0.25);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.profile-badge:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+.profile-badge:hover,
+.profile-badge:focus-within {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 255, 204, 0.5);
 }
 
 .profile-logo {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 50%;
+  height: 48px;
+  width: 48px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 3px #00ffcc);
 }
 
-/* Media Queries */
-@media (max-width: 768px) {
-  .landing-page {
-    padding: 15px; /* Adjust padding */
-  }
-
-  .profile-image {
-    width: 200px;
-    height: 200px;
-  }
-
-  .typing {
-    font-size: 1.6em;
-  }
-
-  .cta-button {
-    width: 45px;
-    height: 45px;
-    font-size: 14px;
-  }
-
+/* Responsive */
+@media (max-width: 700px) {
   .solar-system {
-    width: 240px;
-    height: 240px;
-    top: 100px;
-    right: 10px;
+    gap: 1.5rem;
+  }
+
+  .rocket-container {
+    height: 120px;
+  }
+
+  .rocket {
+    width: 80px;
   }
 
   .profiles-cards {
-    flex-direction: column;
-    align-items: center;
+    gap: 1rem;
   }
 
-  .profile-badge {
-    width: 80px;
-    height: 80px;
-  }
-
-  .chatbot-toggle {
-    bottom: 10px; /* Position the chatbot button higher */
-    right: 10px; /* Adjust for mobile */
-  }
-}
-
-@media (max-width: 480px) {
-  .profile-image {
-    width: 150px;
-    height: 150px;
-  }
-
-  .typing {
-    font-size: 1.3em; /* Further reduce font size on smaller screens */
-  }
-
-  .cta-button {
-    width: 40px;
+  .profile-logo {
     height: 40px;
-    font-size: 12px;
-  }
-
-  .solar-system {
-    width: 200px;
-    height: 200px;
-    top: 80px;
-    right: 5px;
-  }
-
-  .profile-badge {
-    width: 70px;
-    height: 70px;
+    width: 40px;
   }
 }

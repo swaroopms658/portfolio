@@ -17,15 +17,9 @@ function App() {
             path="/"
             element={
               <>
-                <div id="home">
-                  <LandingPage />
-                </div>
-                <div id="skills">
-                  <Skills />
-                </div>
-                <div id="projects">
-                  <Projects />
-                </div>
+                <LandingPage />
+                <Skills />
+                <Projects />
               </>
             }
           />

@@ -1,114 +1,202 @@
-/* src/components/Header.css */
-
-/* Overall card container with dark background and terminal-style look */
+/* Header base styles */
 .header {
-  padding: 20px;
-  background: #1e1e1e; /* Dark background similar to terminal */
-  color: #d4d4d4; /* Light gray text for better contrast */
-  position: relative;
-  border-radius: 8px; /* Rounded corners for a more modern look */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
-  margin: 20px; /* Margin around the card */
-  font-family: "Courier New", Courier, monospace; /* Monospaced font for terminal feel */
-  border: 2px solid #333; /* Border with dark gray color */
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(26, 26, 26, 0.85);
+  backdrop-filter: blur(8px);
+  border-bottom: 2px solid #444;
+  z-index: 1000;
+  box-shadow: 0 2px 15px rgba(0, 255, 204, 0.15);
+  font-family: "Courier New", Courier, monospace;
 }
 
-/* Container for logo and navigation items */
+/* Container for alignment and spacing */
 .nav-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  align-items: center;
 }
 
+/* Logo styles */
 .logo {
-  font-size: 24px;
-  font-weight: bold;
   display: flex;
   align-items: center;
-  color: #ffcc00; /* Yellow color for the logo */
-}
-
-/* Style for the logo image */
-.logo-image {
-  width: 50px; /* Adjust logo size */
-  height: 50px;
-  margin-right: 10px;
-  border-radius: 50%;
-  border: 2px solid #ffcc00; /* Yellow border to match the logo color */
-}
-
-/* Style for "S" */
-.logo-s {
-  font-size: 48px; /* Larger size for emphasis */
-  color: white; /* Yellow color to highlight */
-}
-
-.nav-menu {
-  display: flex;
-}
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-}
-
-.nav-links a {
-  color: #d4d4d4; /* Light gray text for navigation links */
+  font-size: 1.6rem;
+  color: #8aff80;
   text-decoration: none;
-  font-size: 16px; /* Smaller size for readability */
+  font-weight: 700;
+  letter-spacing: 1px;
+  cursor: pointer;
+  user-select: none;
   transition: color 0.3s ease;
 }
 
-.nav-links a:hover {
-  color: #ffcc00; /* Yellow on hover to simulate a bash terminal effect */
+.logo:hover,
+.logo:focus {
+  color: #00ffcc;
+  outline: none;
 }
 
-/* Hamburger menu for mobile */
-.hamburger {
-  display: none;
+/* Logo image and special S */
+.logo-image {
+  width: 36px;
+  height: auto;
+  margin-right: 8px;
+  filter: drop-shadow(0 0 4px #00ffcc);
+}
+
+.logo-s {
+  color: #00ffcc;
+  font-weight: 900;
+}
+
+/* Navigation Menu */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 2.4rem;
+  transition: transform 0.3s ease;
+}
+
+/* Nav links list */
+.nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 2.4rem;
+}
+
+/* Individual nav links */
+.nav-links li {
+  /* for alignment */
+}
+
+.nav-links a,
+.nav-links .active {
+  color: #8aff80;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.1rem;
+  position: relative;
+  white-space: nowrap;
+  transition: color 0.3s ease;
   cursor: pointer;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 20px;
-  width: 25px;
+  user-select: none;
 }
 
-.hamburger .line {
-  height: 3px;
-  background: #d4d4d4; /* Light lines for hamburger menu */
+.nav-links a:hover,
+.nav-links a:focus {
+  color: #00ffcc;
+  outline: none;
+}
+
+/* Active link styling */
+.nav-links .active {
+  color: #00ffcc;
+  font-weight: 700;
+  pointer-events: none;
+}
+
+/* Underline animation for links on hover/focus */
+.nav-links a::after,
+.nav-links .active::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #00ffcc;
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a:focus::after,
+.nav-links .active::after {
   width: 100%;
 }
 
-/* Mobile Styles */
+/* Hamburger button styles */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 28px;
+  height: 22px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  box-sizing: content-box;
+  z-index: 1100;
+}
+
+.hamburger:focus {
+  outline: 2px solid #00ffcc;
+  outline-offset: 4px;
+}
+
+/* Hamburger bars */
+.line {
+  width: 28px;
+  height: 3.5px;
+  background-color: #8aff80;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  transform-origin: 1px;
+}
+
+/* Hamburger animation when open */
+.nav-menu.open + .hamburger,
+.hamburger.open .line {
+  /* alternate style if needed */
+}
+
+.hamburger.open .line:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 6px);
+}
+
+.hamburger.open .line:nth-child(2) {
+  opacity: 0;
+  transform: translateX(20px);
+}
+
+.hamburger.open .line:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Responsive styles for mobile */
 @media (max-width: 768px) {
   .nav-menu {
-    display: none;
+    position: fixed;
+    top: 72px; /* height of header approx */
+    right: 0;
+    background: rgba(26, 26, 26, 0.95);
+    backdrop-filter: blur(10px);
+    height: calc(100vh - 72px);
+    width: 220px;
+    flex-direction: column;
+    padding-top: 3rem;
+    gap: 2rem;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    box-shadow: -4px 0 12px rgba(0, 255, 204, 0.25);
   }
 
+  /* When menu is open */
   .nav-menu.open {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    background-color: #1e1e1e; /* Dark background for mobile */
-    z-index: 1;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transform: translateX(0);
   }
 
   .nav-links {
     flex-direction: column;
-    width: 100%;
-    text-align: center;
-  }
-
-  .nav-links a {
-    margin: 10px 0;
-    font-size: 18px;
+    gap: 1.4rem;
   }
 
   .hamburger {

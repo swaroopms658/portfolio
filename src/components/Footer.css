@@ -1,86 +1,56 @@
-/* Footer Styling with Enhanced Unix Terminal Look */
 .footer {
-  background-color: #1a1a1a; /* Sleek dark background */
-  color: #8aff80; /* Neon green terminal-like text */
-  padding: 20px;
+  background: rgba(26, 26, 26, 0.92);
+  color: #8aff80;
+  padding: 24px 0;
   text-align: center;
-  font-family: "Courier New", Courier, monospace; /* Monospaced font for terminal feel */
-  font-size: 16px; /* Slightly larger font for better readability */
-  border-top: 2px solid #444; /* Subtle border for separation */
-  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5); /* Soft shadow for depth */
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1rem;
+  border-top: 2px solid #444;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
 }
 
 .footer a {
-  color: #8aff80; /* Consistent neon green links */
+  color: #8aff80;
   text-decoration: none;
-  font-weight: bold; /* Emphasize links */
-  border-bottom: 1px dotted #8aff80; /* Subtle underline for terminal aesthetic */
-  transition: color 0.3s ease, border-bottom-color 0.3s ease;
+  font-weight: 500;
+  border-bottom: 1px dotted #8aff80;
+  transition: color 0.3s, border-bottom-color 0.3s;
 }
 
 .footer a:hover {
-  color: #00ffcc; /* Brighter hover effect for contrast */
-  border-bottom-color: #00ffcc; /* Match underline color on hover */
-}
-
-.footer p {
-  margin: 10px 0;
+  color: #00ffcc;
+  border-bottom-color: #00ffcc;
 }
 
 .footer-icons {
   margin-top: 10px;
+  display: flex;
+  gap: 16px;
 }
 
 .footer-icons a {
-  display: inline-block;
-  margin: 0 10px;
-  font-size: 20px; /* Icon size */
-  color: #8aff80; /* Neon green for icons */
-  transition: transform 0.3s ease, color 0.3s ease;
+  font-size: 1.5rem;
+  transition: transform 0.2s, color 0.2s;
 }
 
 .footer-icons a:hover {
-  color: #00ffcc; /* Brighter hover color */
-  transform: scale(1.2); /* Slight scaling effect for interaction */
+  color: #00ffcc;
+  transform: scale(1.2);
 }
 
-/* Mobile Responsiveness */
-@media (max-width: 768px) {
-  .footer {
-    font-size: 14px; /* Adjust font size for smaller screens */
-    padding: 15px;
+@media (max-width: 600px) {
+  .footer-content {
+    font-size: 0.95rem;
   }
-
   .footer-icons a {
-    font-size: 18px; /* Slightly smaller icons on mobile */
-    margin: 0 5px; /* Reduce spacing between icons */
-  }
-
-  .footer a {
-    font-size: 14px; /* Slightly smaller links for mobile */
-  }
-
-  .footer p {
-    font-size: 14px; /* Adjust paragraph text size */
-  }
-
-  .footer-icons {
-    display: flex;
-    justify-content: center; /* Center icons horizontally */
-    margin-top: 10px;
-  }
-}
-
-@media (max-width: 480px) {
-  .footer {
-    padding: 10px;
-  }
-
-  .footer a {
-    font-size: 12px; /* Further reduce font size on very small screens */
-  }
-
-  .footer-icons a {
-    font-size: 16px; /* Further reduce icon size */
+    font-size: 1.2rem;
   }
 }
