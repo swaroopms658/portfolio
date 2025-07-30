@@ -3,6 +3,11 @@ import "./Projects.css";
 
 const projects = [
   {
+    title: "LaTeX-Math-Question-Extraction-using-Open-Source-LLMs",
+    description: `This project provides an end-to-end pipeline to automatically extract and generate LaTeX-formatted math questions from RD Sharma textbooks in PDF format. It leverages open-source tools and models including PyMuPDF, SentenceTransformers, FAISS, and instruction-tuned GPT-like LLMs via HuggingFace Transformers.`,
+    githubUrl: "https://github.com/swaroopms658?tab=repositories",
+  },
+  {
     title: "AIBOM",
     description: `Designed and implemented a real-time AIBOM solution for automated Bill of Materials (BOM) generation.
 Developed a robust backend with FastAPI and an interactive frontend using React.
