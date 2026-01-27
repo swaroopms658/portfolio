@@ -1,7 +1,7 @@
 /* Base page and fonts */
 .landing-page {
   min-height: 100vh;
-  background: linear-gradient(120deg, #181c1f 0%, #23282c 100%);
+  background: transparent;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -33,6 +33,7 @@
   0% {
     transform: translateY(0) scale(1);
   }
+
   100% {
     transform: translateY(-400px) scale(0.6);
     opacity: 0;
@@ -62,10 +63,12 @@
 .orbit-1 {
   animation-duration: 18s;
 }
+
 .orbit-2 {
   animation-duration: 22s;
   animation-direction: reverse;
 }
+
 .orbit-3 {
   animation-duration: 26s;
 }
@@ -83,6 +86,7 @@
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }
@@ -114,21 +118,25 @@
   left: 25%;
   animation-delay: 0s;
 }
+
 .shooting-star:nth-child(2) {
   top: 40%;
   left: 50%;
   animation-delay: 1s;
 }
+
 .shooting-star:nth-child(3) {
   top: 70%;
   left: 75%;
   animation-delay: 2s;
 }
+
 .shooting-star:nth-child(4) {
   top: 20%;
   left: 80%;
   animation-delay: 1.5s;
 }
+
 .shooting-star:nth-child(5) {
   top: 55%;
   left: 10%;
@@ -140,6 +148,7 @@
     transform: translateX(0) translateY(0) rotate(45deg);
     opacity: 0.9;
   }
+
   100% {
     transform: translateX(200px) translateY(200px) rotate(45deg);
     opacity: 0;
@@ -151,10 +160,12 @@
   max-width: 900px;
   width: 100%;
   text-align: center;
-  padding: 1rem 1.5rem;
-  border-radius: 15px;
-  background: rgba(26, 26, 26, 0.85);
-  box-shadow: 0 6px 20px rgba(0, 255, 204, 0.25);
+  padding: 2rem;
+  border-radius: 20px;
+  background: rgba(26, 26, 26, 0.4);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 255, 204, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }
 
 /* Typing effect placeholder class (you may add typing animation yourself) */

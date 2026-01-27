@@ -7,10 +7,13 @@ import LandingPage from "./components/LandingPage";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 
+import Scene3D from "./components/Scene3D";
+
 function App() {
   return (
     <Router>
       <div className="App">
+        <Scene3D />
         <Header />
         <Routes>
           <Route

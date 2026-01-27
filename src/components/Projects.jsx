@@ -1,63 +1,60 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import { ExternalLink, Star, Code2 } from "lucide-react";
+import { fetchGithubProjects } from "../services/githubService";
 import "./Projects.css";
 
-const projects = [
-  {
-    title: "LaTeX-Math-Question-Extraction-using-Open-Source-LLMs",
-    description: `This project provides an end-to-end pipeline to automatically extract and generate LaTeX-formatted math questions from RD Sharma textbooks in PDF format. It leverages open-source tools and models including PyMuPDF, SentenceTransformers, FAISS, and instruction-tuned GPT-like LLMs via HuggingFace Transformers.`,
-    githubUrl: "https://github.com/swaroopms658?tab=repositories",
-  },
-  {
-    title: "AIBOM",
-    description: `Designed and implemented a real-time AIBOM solution for automated Bill of Materials (BOM) generation.
-Developed a robust backend with FastAPI and an interactive frontend using React.
-Integrated PowerShell for security vulnerability scanning and model analysis to enhance system security.
-Implemented a DFS algorithm to efficiently process ZIP archives for comprehensive BOM generation and analysis.`,
-    githubUrl: "https://github.com/swaroopms658?tab=repositories",
-  },
-  {
-    title: "SentimentGPT",
-    description:
-      "Sentiment GPT is a sentiment analysis web application developed using the Django framework and integrated with the Hugging Face Transformers library. This application accurately assesses the sentiment (positive, negative, or neutral) of given text inputs, providing a reliable sentiment score.",
-    githubUrl: "https://github.com/swaroopms658?tab=repositories",
-  },
-  {
-    title: "Color Quantization Compressor",
-    description:
-      "Implemented an image compression application using an unsupervised machine learning algorithm. The application compresses images by reducing the color palette to a specified number of colors. In this project, the original image was compressed using 16 colors.",
-    githubUrl: "https://github.com/swaroopms658?tab=repositories",
-  },
-  {
-    title: "ML Web App",
-    description:
-      "Developed an ML-powered web application for predicting diabetes and classifying customers.",
-    githubUrl: "https://github.com/swaroopms658?tab=repositories",
-  },
-  {
-    title: "Recipe Management System",
-    description:
-      "Implemented a secure recipe ordering system using Django and Python. Users can create, update, delete, and read recipes. Authentication is implemented for security. Users can also update their profiles, including name, description, and profile picture.",
-    githubUrl: "https://github.com/swaroopms658?tab=repositories",
-  },
-  {
-    title: "Personal Portfolio",
-    description:
-      "Developed a full-featured portfolio with voice and chatbot capabilities.",
-    githubUrl: "https://github.com/swaroopms658?tab=repositories",
-  },
-];
-
 const Projects = () => {
+  const [projects, setProjects] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const getProjects = async () => {
+      const data = await fetchGithubProjects();
+      setProjects(data);
+      setLoading(false);
+    };
+    getProjects();
+  }, []);
+
+  if (loading) {
+    return (
+      <section id="projects" className="projects-section">
+        <h2 className="section-title">Synthesizing Data...</h2>
+        <div className="loading-spinner"></div>
+      </section>
+    );
+  }
+
   return (
     <section id="projects" className="projects-section">
-      <h2 className="section-title">Projects</h2>
+      <motion.h2
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="section-title"
+      >
+        Dynamic Projects
+      </motion.h2>
       <div className="projects-container">
         {projects.map((project, index) => (
-          <article
-            key={index}
+          <motion.article
+            key={project.id || index}
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            whileHover={{
+              scale: 1.05,
+              rotateY: 15,
+              rotateX: -10,
+              z: 100,
+              boxShadow: "0 30px 60px rgba(0, 255, 204, 0.4)"
+            }}
+            transition={{ duration: 0.6, type: "spring", stiffness: 120 }}
             className="ubuntu-card"
             tabIndex={0}
             aria-label={`Project: ${project.title}`}
+            style={{ perspective: "1500px", transformStyle: "preserve-3d" }}
           >
             <header className="ubuntu-card-header">
               <div className="ubuntu-dots" aria-hidden="true">
@@ -69,6 +66,18 @@ const Projects = () => {
             </header>
             <main className="ubuntu-card-content">
               <p>{project.description}</p>
+              <div className="project-meta">
+                {project.language && (
+                  <span className="tech-tag">
+                    <Code2 size={14} /> {project.language}
+                  </span>
+                )}
+                {project.stars > 0 && (
+                  <span className="stars-tag">
+                    <Star size={14} fill="currentColor" /> {project.stars}
+                  </span>
+                )}
+              </div>
             </main>
             <footer className="ubuntu-card-footer">
               <a
@@ -78,10 +87,10 @@ const Projects = () => {
                 className="github-link"
                 aria-label={`View ${project.title} on GitHub`}
               >
-                View on GitHub
+                View Repository <ExternalLink size={16} />
               </a>
             </footer>
-          </article>
+          </motion.article>
         ))}
       </div>
     </section>
@@ -89,3 +98,4 @@ const Projects = () => {
 };
 
 export default Projects;
+
